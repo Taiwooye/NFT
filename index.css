@@ -14,6 +14,10 @@ body {
 
 }
 
+/* .navbar-toggler {
+    color: white !important;
+} */
+
 h6,
 h1,
 h5 {
@@ -28,4 +32,9 @@ h4 {
 p {
     color: white;
 
+}
+#show{
+color: rgb(32, 133, 32);
+display: flex;
+margin-left: 180px;
 }
