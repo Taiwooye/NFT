@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<style>
+     body{
+        background-image: url(./images/cinema2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-color: rgba(7, 66, 39, 0.801);
+    }
+    .review {
+
+  padding:2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+
+}
+
+.img-container {
+  position: relative;
+  
+ 
+  margin: 0 auto;
+  /* height: 60vh; */
+  /* width: 90%; */
+   display: flex;
+   justify-content: center;
+   
+}
+
+#person-img {
+ margin-left: 10px;
+  width: 65%;
+  display: block;
+
+
+  /* height: auto; */
+  /* height: 200px; */
+  /* max-height: auto; */
+  display: flex;
+  /* object-fit: cover; */
+  /* border-radius: 50%; */
+   position: relative;  
+   border: none;
+   border-radius: 10px;
+
+
+
+}
+.prev-btn,
+.next-btn {
+  color: green;
+  font-size: 2rem;
+  background: transparent; 
+  border: 2x solid rgb(255, 255, 255);
+  border-radius: 30%;
+  padding: 10px;
+  width: 3rem;
+  /* border-color: transparent; */
+  margin:  0.5rem;
+  transition: 2s;
+  /* cursor: pointer; */
+  /* display: flex; */
+   justify-content: center;
+}
+.prev-btn:hover,
+.next-btn:hover {
+  color: green;
+}
+  
+</style>
+<body>
+    <div class="container-fluid pt-2 " style="height: 100vh;">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="logo flex-grow-1 ps-5 ">
+            <h1 class="navbar-brand text-light animate__animated animate__rubberBand animate__repeat-2  " href="#" style="font-size: 40px;">NFT</h1>
+          </div>
+          <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-light"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-around ps-5" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="./apply.html">APPLY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./About.html">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./product.html">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./event.html">EVENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./Awards.html">AWARDS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./contact.html">CONTACT US</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <span style="color: white;color: rgb(84, 164, 84);font-size: 23px;"><i class="fas fa-chevron-left" ></i> MERCHANDISE</span>
+       <div class="col-12 col-md-12">
+        <article class="review">
+          <div class="img-container">
+              <img src="./images/lady3.jpg" id="person-img" alt="" >
+          </div>
+         <br>
+          <!-- prev next button -->
+          <div class="button-container">
+              <button class="prev-btn">
+                  <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="next-btn">
+                  <i class="fas fa-chevron-right"></i>
+              </button>
+          </div>
+        
+      </article>
+       </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  const reviews = [
+    {
+     
+      img: "./images/ceo1.jpg",
+     
+    },
+    {
+      
+      img: "./images/ceo4.jpg",
+    },
+    {
+     
+      img: "./images/group1.jpg",
+
+    },
+    {
+      img: "./images/him.jpg",
+    },
+    {
+      img: "./images/man1.jpg",
+    },
+    {
+      img: "./images/people.jpg",
+    },
+    {
+      img: "./images/one1.jpg",
+    },
+    {
+      img: "./images/lady3.jpg",
+    }
+  ];
+  // select items
+  const img = document.getElementById("person-img");
+
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+
+  
+  // set starting item
+  let currentItem = 0;
+  
+  // load initial item
+  window.addEventListener("keyup", function (e) {
+
+    console.log(e.keyCode);
+    const item = reviews[currentItem];
+    img.src = item.img;
+  });
+  
+  // show person based on item
+  function showPerson(person) {
+    const item = reviews[person];
+    img.src = item.img;
+    
+  }
+
+
+  window.addEventListener("keyup", function (e) {
+
+     if(e.keyCode == 39){
+      currentItem++;
+
+      if (currentItem > reviews.length - 1) {
+      currentItem = 0;
+    }
+    
+
+     } else if (e.keyCode == 37){
+
+          currentItem--;
+        if (currentItem < 0) {
+          currentItem = reviews.length - 1;
+        }
+      
+     }   
+
+     showPerson(currentItem);
+
+  });   
+
+  
+  // show next person
+  nextBtn.addEventListener("click", function (e) {
+    console.log(e);
+
+    currentItem++;
+    if (currentItem > reviews.length - 1) {
+      currentItem = 0;
+    }
+    showPerson(currentItem);
+  });
+
+
+
+  // show prev person
+  prevBtn.addEventListener("click", function () {
+    currentItem--;
+    if (currentItem < 0) {
+      currentItem = reviews.length - 1;
+    }
+    showPerson(currentItem);
+  });
+ 
+</script>
+</html>

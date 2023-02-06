@@ -36,5 +36,10 @@ p {
 #show{
 color: rgb(32, 133, 32);
 display: flex;
-margin-left: 180px;
+margin-left: 140px;
+}
+
+img{
+    /* border-radius: 20px; */
+    border: 1px solid green;
 }
