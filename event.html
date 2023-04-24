@@ -31,7 +31,6 @@
 
 .img-container {
   position: relative;
-  
  
   margin: 0 auto;
   /* height: 60vh; */
@@ -45,20 +44,13 @@
  margin-left: 10px;
   width: 65%;
   display: block;
-
-
-  /* height: auto; */
-  /* height: 200px; */
-  /* max-height: auto; */
+  box-shadow: 0 5px 10px rgba(39, 157, 24, 0.3);
+  
   display: flex;
-  /* object-fit: cover; */
-  /* border-radius: 50%; */
+
    position: relative;  
    border: none;
    border-radius: 10px;
-
-
-
 }
 .prev-btn,
 .next-btn {
@@ -76,9 +68,32 @@
   /* display: flex; */
    justify-content: center;
 }
-.prev-btn:hover,
-.next-btn:hover {
+.prev-btn:active,
+.next-btn:active {
   color: green;
+  transform: scale(0.60);
+}
+
+@media(max-width: 768px){
+ 
+  body{
+    background-color: rgb(13, 42, 12);
+  }
+  #person-img{
+    width: 100%;
+    height: 65vh;
+  }
+  .prev-btn,
+.next-btn{
+  color: white;
+  border: 2px solid white;
+  
+}
+.prev-btn:active,
+.next-btn:active{
+  color: aqua;
+  transform: scale(0.76);
+}
 }
   
 </style>
@@ -120,7 +135,7 @@
        <div class="col-12 col-md-12">
         <article class="review">
           <div class="img-container">
-              <img src="./images/lady3.jpg" id="person-img" alt="" >
+              <img src="./images/nft3.png" id="person-img" alt="" >
           </div>
          <br>
           <!-- prev next button -->
@@ -143,33 +158,35 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
   const reviews = [
     {
      
-      img: "./images/ceo1.jpg",
+      img: "./images/nft1.png",
      
     },
     {
       
-      img: "./images/ceo4.jpg",
+      img: "./images/nft2.jpg",
     },
     {
      
-      img: "./images/group1.jpg",
+      img: "./images/nft3.png",
 
     },
     {
-      img: "./images/him.jpg",
+      img: "./images/nft9.png",
     },
     {
-      img: "./images/man1.jpg",
+      img: "./images/nft4.png",
     },
     {
-      img: "./images/people.jpg",
+      img: "./images/nft5.png",
     },
     {
-      img: "./images/one1.jpg",
+      img: "./images/nft7.png",
     },
     {
-      img: "./images/lady3.jpg",
-    }
+      img: "./images/nft6.png",
+    },
+   
+   
   ];
   // select items
   const img = document.getElementById("person-img");
@@ -182,12 +199,12 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
   let currentItem = 0;
   
   // load initial item
-  window.addEventListener("keyup", function (e) {
+  // window.addEventListener("keyup", function (e) {
 
-    console.log(e.keyCode);
-    const item = reviews[currentItem];
-    img.src = item.img;
-  });
+  //   console.log(e.keyCode);
+  //   const item = reviews[currentItem];
+  //   img.src = item.img;
+  // });
   
   // show person based on item
   function showPerson(person) {
